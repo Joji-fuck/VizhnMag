@@ -1,0 +1,857 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+@font-face {
+    font-family: 'Denistina';
+    src: url('../fonts/denistina/denistina_en.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-CompactBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-CompactDark.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-CompactFineItalic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-NarrowLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-SpatialBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-SpatialBlackItalic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-SpatialFine.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-TallFine.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-TallRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-TightMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-WideBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-WideMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPRightGothic';
+    src: url('../fonts/PPRight/PPRightGothic-WideMediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'VelaSans';
+    src: url('../fonts/VelaSans/VelaSans-GX.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /*font-family: "Montserrat", sans-serif;*/
+    background: #fff2de;
+    /*background: #feefd2;*/
+}
+/* --- ШАПКА И ЛОГОТИП --- */
+header {
+    background: #feefd2;
+    margin: 10px 0;
+    text-align: center;
+    top: 0;
+    z-index: 999;
+    position: sticky;
+}
+
+header a img {
+    max-width: 400px;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+.running-bg {
+    width: 100%;
+    height: 80px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    background-size: auto 80px;
+    animation: moveBg 10s linear infinite;
+}
+
+@keyframes moveBg {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 500px 0;
+    }
+}
+.navbar {
+    font-family: 'VelaSans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative; /* Важно для выпадающего меню на мобилках */
+    background: #ffc432;
+    border-bottom: 10px solid #104064;
+}
+
+/* Прячем бургер на ПК */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #0f3f63;
+    margin: 6px 0;
+    transition: 0.3s ease; /* Плавная анимация линий */
+}
+
+.navbar ul {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #0f3f63;
+    font-weight: 600;
+}
+
+.navbar ul li a:hover {
+    font-weight: 800;
+    /*opacity: 0.8;*/
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ (БУРГЕР-МЕНЮ ДЛЯ МОБИЛОК)
+   ========================================= */
+@media (max-width: 768px) {
+
+    header {
+        margin: 15px 0;
+    }
+
+    header a img {
+        max-width: 200px; /* Логотип на телефоне */
+    }
+
+    /* 1. Показываем кнопку бургера */
+    .burger-menu {
+        display: block;
+        position: relative;
+        z-index: 101; /* Чтобы крестик был поверх открытого меню */
+    }
+
+    /* 2. Прячем меню и делаем его выпадающим */
+    .navbar ul {
+        position: absolute;
+        top: 100%; /* Выпадает ровно под navbar */
+        left: 0;
+        width: 100%;
+        background-color: #feefd2; /* Цвет фона как у body */
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05); /* Легкая тень снизу */
+
+        /* Прячем меню (оно как бы сплющено по вертикали) */
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+    }
+
+    .navbar ul li a {
+        font-size: 22px;
+        display: block;
+        text-align: center;
+    }
+
+    /* 3. Класс .active добавляется через JavaScript при клике */
+    .navbar ul.active {
+        transform: scaleY(1); /* Раскрываем меню */
+    }
+
+    /* Анимация превращения бургера в крестик (Х) */
+    .burger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0; /* Прячем среднюю линию */
+    }
+    .burger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.auth input, .auth select{
+    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.3);
+}
+.auth button{
+    width: 250px;
+    padding: 10px 0;
+}
+.auth-next{
+    margin-top: 10px;
+}
+
+.cms-cards{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.cms-card{
+    margin-top: 30px;
+    border: 1px solid #0f3f63;
+    width: 400px;
+    border-radius: 20px;
+    min-width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #0f3f63;
+    font-size: 24px;
+    transition: .3s;
+}
+.cms-card:hover, .cms-card:active{
+    transition: .3s;
+    background: #0f3f63;
+    color: #feefd2;
+}
+
+
+
+/* Общий контейнер */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: start;
+}
+
+/* Сами колонки */
+.masonry-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Стили карточки */
+
+.news-card {
+    background: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    color: #0f3f63;
+    text-decoration: none;
+}
+
+/* Настройки обертки фото */
+.card-image {
+    position: relative; /* Якорь для заливки */
+    display: block;
+    overflow: hidden;   /* Чтобы ничего не торчало */
+}
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f3f63;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: multiply;
+}
+
+.card-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+
+/* 1. Показываем синюю заливку */
+.news-card:hover .card-image::after {
+    opacity: 0.6;
+}
+.news-card:hover .card-image img {
+    filter: grayscale(100%);
+}
+
+.card-content {
+    padding: 15px;
+    text-align: start;
+
+}
+
+.card-meta {
+    font-size: 16px;
+    margin-bottom: 10px;
+    /*letter-spacing: 1px;*/
+
+}
+.card-category{
+    font-family: Denistina, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: revert;
+    color: #ffc432;
+    margin-right: 5px;
+}
+
+.card-title {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 900;
+    margin: 0;
+    font-family: 'PPRightGothic', sans-serif;
+
+}
+
+.card-title a {
+    text-decoration: none;
+    color: #000;
+}
+
+.news-card.text-only .card-content {
+    padding: 30px 20px;
+    border-top: 4px solid #cc0000;
+}
+
+/*КАРТОЧКИ КИНО*/
+.masonry-movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    align-items: start;
+}
+.masonry-movie-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.movie-card{
+    background: rgba(255, 255, 255, 0);
+    color: #0f3f63;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.card-movie-title{
+    font-family: PPRightGothic, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card-movie-director{
+    font-family: Denistina, sans-serif;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: revert;
+    color: #ffc432;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.movie-card-bg{
+    background: #ffc432;
+    width: 100%;
+    position: relative;
+    transition: transform .3s ease;
+}
+.card-movie-image{
+    border-right: 15px solid #0f3f63;
+    border-bottom: 15px solid #0f3f63;
+    position: relative;
+    transition: transform .3s ease;
+}
+
+.card-movie-image img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Картинка сдвигается влево-вверх */
+.movie-card:hover .card-movie-image{
+    transform: translate(10px, 10px);
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 900px) {
+    .masonry-grid {
+        grid-template-columns: 1fr 1fr; /* 2 колонки на планшете */
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        grid-template-columns: 1fr; /* 1 колонка на телефоне */
+    }
+}
+
+
+
+
+/* Контейнер статьи уже, чем основной сайт, чтобы глаза не разбегались */
+.article-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.article-header {
+    text-align: start;
+    margin-bottom: 30px;
+    font-family: PPRightGothic, 'sans-serif';
+}
+
+.article-category {
+    font-family: VelaSans, 'sans-serif';
+    text-transform: uppercase;
+    color: #cc0000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.article-date {
+    color: #888;
+    font-size: 0.9rem;
+    font-family: VelaSans, sans-serif;
+}
+.article-image{
+    min-width: 800px;
+}
+.article-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* Текст статьи */
+.article-body {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #333;
+    font-family: VelaSans, sans-serif;
+}
+
+/* Делаем отступы между абзацами, если в базе просто текст */
+.article-body p {
+    margin-bottom: 20px;
+}
+
+/* "Читайте также" */
+.related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.related-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+.related-news{
+    width: 300px;
+}
+.related-news-wrap{
+    position: sticky;
+    top: 175px;
+}
+
+.related-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Адаптив для похожих новостей */
+@media(max-width: 1200px) {
+    .article-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .related-news{
+        width: 100%;
+    }
+    .related-grid {
+        position: static;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .article-image{
+        min-width: 0;
+    }
+}
+@media(max-width: 800px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.movie-header{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.movie-img{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.movie-img img{
+    border: 9px solid #0f3f63;
+}
+.btn-watch{
+    background: #0f3f63;
+    color: white;
+    padding: 10px;
+}
+.btn-watch:hover, .btn-watch:active{
+    background: #0d3350;
+    color: white;
+}
+.movie-meta{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.movie-description{
+    font-size: 18px;
+}
+.movie-meta-section span{
+    font-size: 20px;
+}
+.movie-rewind{
+    max-width: 370px;
+    border-radius: 15px;
+}
+.movie-button{
+    border-radius: 5px;
+}
+/* ОБЩИЙ КОНТЕЙНЕР */
+.team-wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    gap: 50px;
+    position: relative;
+}
+
+/* ЛЕВАЯ КОЛОНКА (СПИСОК) */
+.team-list {
+    flex-grow: 1; /* Занимает все свободное место */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-item {
+    display: flex;
+    align-items: baseline; /* Выравнивание по базовой линии текста */
+    gap: 20px;
+    cursor: pointer;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+/* Должность (слева, серая, маленькая) */
+.team-role {
+    width: 200px; /* Фиксированная ширина для выравнивания */
+    text-align: right;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Имя (справа, большое) */
+.team-name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: rgba(15, 63, 99, 0.5);
+
+    letter-spacing: -1px;
+    transition: color 0.3s ease;
+}
+.team-media{
+    text-decoration: none;
+    color: #0f3f63;
+}
+/* АКТИВНОЕ СОСТОЯНИЕ (ПРИ НАВЕДЕНИИ) */
+.team-item:hover .team-name,
+.team-item.active .team-name {
+    color: #0f3f63;
+}
+
+/* ПРАВАЯ КОЛОНКА (ПРЕВЬЮ) */
+.team-preview {
+    width: 350px; /* Фиксированная ширина для фото */
+    flex-shrink: 0; /* Чтобы не сжималась */
+}
+
+/* Делаем блок "липким" при скролле */
+.preview-sticky {
+    position: sticky;
+    top: 50px; /* Отступ от верха экрана при скролле */
+}
+
+#preview-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.preview-details {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    transition: opacity 0.2s ease;
+}
+
+/* ===============================
+   АДАПТИВ (ДЛЯ МОБИЛЬНЫХ)
+   =============================== */
+@media (max-width: 1024px) {
+    .team-name {
+        font-size: 2.5rem; /* Уменьшаем шрифт на планшетах */
+    }
+}
+
+@media (max-width: 768px) {
+    /* На телефонах колонки встают друг под друга */
+    .team-wrapper {
+        flex-direction: column-reverse; /* Превью сверху, список снизу */
+        padding: 0 20px;
+    }
+    .team-preview {
+        width: 100%; /* Фото на всю ширину */
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #feefd2; /* Обязательно фон, чтобы текст не просвечивал при скролле */
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .preview-sticky {
+        position: relative;
+        top: 0;
+    }
+    /* Ограничиваем высоту картинки на телефоне, чтобы она не занимала весь экран */
+    #preview-img {
+        max-height: 50vh; /* Максимум 40% от высоты экрана */
+        object-fit: cover; /* Чтобы не сплющило */
+        object-position: center top;
+    }
+    .team-item {
+        flex-direction: column; /* Должность и имя друг под другом */
+        align-items: flex-start;
+        gap: 5px;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .team-role {
+        width: 100%;
+        text-align: left;
+    }
+
+    .team-name {
+        font-size: 2rem;
+    }
+}
