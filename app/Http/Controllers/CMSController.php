@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class CMSController extends Controller
 {
     public function index(){
-        $title = "CMS";
+        $title = "cms";
         $user = Auth::user();
         return view('cms.index', compact('title', 'user'));
     }
