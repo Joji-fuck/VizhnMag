@@ -38,7 +38,7 @@ class HomeController extends Controller
             ->take(3)
             ->get();
         $post = $article;
-        return view('news.show', compact('title', 'post', 'relatedNews'));
+        return view('article.show', compact('title', 'post', 'relatedNews'));
     }
 
 }
