@@ -34,7 +34,7 @@
             </div>
             <div class="mb-4">
                 <label for="description" class="block text-gray-700 font-bold mb-2">Описание</label>
-                <input type="text" name="description" id="description" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('description') }}" placeholder="Пупка, залупка, хуюпка и шлюпка">
+                <input type="text" name="description" id="description" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('description') }}" placeholder="Расскажите что вы увидели...">
             </div>
             <div class="mb-4">
                 <label for="image" class="block text-gray-700 font-bold mb-2">Постер фильма</label>
@@ -42,11 +42,11 @@
             </div>
             <div class="mb-4">
                 <label for="genre" class="block text-gray-700 font-bold mb-2">Жанр</label>
-                <input type="text" name="genre" id="genre" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('genre') }}" placeholder="Порно-фильм">
+                <input type="text" name="genre" id="genre" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('genre') }}" placeholder="Фантастика">
             </div>
             <div class="mb-4">
                 <label for="director" class="block text-gray-700 font-bold mb-2">Режиссер</label>
-                <input type="text" name="director" id="director" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('director') }}" placeholder="Пупка, залупка, хуюпка и шлюпка">
+                <input type="text" name="director" id="director" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('director') }}" placeholder="Квентин Торантино">
             </div>
             <div class="mb-4">
                 <label for="title" class="block text-gray-700 font-bold mb-2">Дата релиза</label>
@@ -71,7 +71,7 @@
             </div>
             <div class="mb-4">
                 <label for="link" class="block text-gray-700 font-bold mb-2">Ссылка</label>
-                <input type="text" name="link" id="link" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('link') }}" placeholder="https://vk.com/zalupa">
+                <input type="text" name="link" id="link" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('link') }}" placeholder="https://vk.com/your_film">
             </div>
             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 p-5 rounded">
                 Опубликовать

@@ -29,7 +29,7 @@
         </div>
         <div class="mb-4">
             <label for="description" class="block text-gray-700 font-bold mb-2">Описание</label>
-            <input type="text" name="description" id="description" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->description }}" placeholder="Пупка, залупка, хуюпка и шлюпка">
+            <input type="text" name="description" id="description" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->description }}" placeholder="Расскажите что вы увидели...">
         </div>
         <div class="mb-4">
             <label for="image" class="block text-gray-700 font-bold mb-2">Обложка новости</label>
@@ -38,11 +38,11 @@
         </div>
         <div class="mb-4">
             <label for="genre" class="block text-gray-700 font-bold mb-2">Жанр</label>
-            <input type="text" name="genre" id="genre" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->genre }}" placeholder="Порно-фильм">
+            <input type="text" name="genre" id="genre" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->genre }}" placeholder="Фантастика">
         </div>
         <div class="mb-4">
             <label for="director" class="block text-gray-700 font-bold mb-2">Режиссер</label>
-            <input type="text" name="director" id="director" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->director }}" placeholder="Пупка, залупка, хуюпка и шлюпка">
+            <input type="text" name="director" id="director" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ $movie->director }}" placeholder="Квентин Торантино">
         </div>
         <div class="mb-4">
             <label for="title" class="block text-gray-700 font-bold mb-2">Дата релиза</label>
