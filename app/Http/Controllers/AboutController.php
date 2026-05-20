@@ -23,7 +23,7 @@ class AboutController extends Controller
               'name' => 'Максим Логвинов',
               'image' => 'team/Максим.jpg',
               'social' => 'WhatAboutAula',
-              'details' => 'Люблю одну, хиджаб дарю, ебу жену, цыгель цыгель айлюлю!',
+              'details' => 'По вайбу что-то между солнцем и психом',
           ],
           [
               'id' => 3,

@@ -19,19 +19,20 @@ return new class extends Migration
             $table->longText('content');
             $table->timestamps();
         });
-
-        DB::statement('CREATE EXTENSION IF NOT EXISTS pg_trgm');
-        DB::statement('
-            CREATE INDEX news_title_trgm_idx
-            ON news
-            USING GIN (title gin_trgm_ops)
-        ');
-        DB::statement('
-            CREATE INDEX news_body_trgm_idx
-            ON news
-            USING GIN (body gin_trgm_ops)
-        ');
     }
+
+//        DB::statement('CREATE EXTENSION IF NOT EXISTS pg_trgm');
+//        DB::statement('
+//            CREATE INDEX news_title_trgm_idx
+//            ON news
+//            USING GIN (title gin_trgm_ops)
+//        ');
+//        DB::statement('
+//            CREATE INDEX news_body_trgm_idx
+//            ON news
+//            USING GIN (body gin_trgm_ops)
+//        ');
+
 
     /**
      * Reverse the migrations.
