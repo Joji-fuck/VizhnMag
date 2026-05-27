@@ -9,20 +9,7 @@ services:
     volumes:
       - .:/var/www
     depends_on:
-      - db
-    networks:
-      - laravel
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: laravel_pma
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: db
-      PMA_USER: laravel
-      PMA_PASSWORD: root
-    depends_on:
-      - db
+      - postgres
     networks:
       - laravel
   nginx:
@@ -79,8 +66,9 @@ services:
         - laravel
 
 volumes:
-  dbdata:
+  pgdata:
 
 networks:
   laravel:
+    driver: bridge
 
