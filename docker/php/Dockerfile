@@ -21,8 +21,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-COPY docker/php/conf.d/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
-
 WORKDIR /var/www
 
 COPY . .
