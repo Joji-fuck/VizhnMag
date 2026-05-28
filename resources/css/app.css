@@ -225,7 +225,7 @@ header{
 }
 
 .site-header__logo img {
-    max-height: 110px;
+    max-height: 90px;
     width: auto;
     object-fit: contain;
 }
@@ -233,7 +233,7 @@ header{
 /* Завитушки — растягиваются на всю ширину */
 .site-header__decor {
     flex: 1;
-    height: 110px;
+    height: 90px;
     background-repeat: no-repeat;
     background-size: 100% 100%;        /* растягиваем на всю ширину */
     background-position: center;
