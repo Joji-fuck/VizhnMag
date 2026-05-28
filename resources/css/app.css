@@ -219,9 +219,12 @@ header{
 
 /* Логотип ВИЖН */
 .site-header__logo {
-    flex-shrink: 0;
+    flex-shrink: 1;
     display: flex;
     align-items: center;
+    height: 100%;
+    max-width: 25%;
+
 }
 
 .site-header__logo img {
@@ -233,9 +236,9 @@ header{
 /* Завитушки — растягиваются на всю ширину */
 .site-header__decor {
     flex: 1;
-    height: 90px;
+    height: 100%;
     background-repeat: no-repeat;
-    background-size: 100% 100%;        /* растягиваем на всю ширину */
+    background-size: 100% 100%;
     background-position: center;
 }
 
@@ -248,6 +251,7 @@ header{
     }
 
     .site-header__logo {
+        max-width: 60%;
         justify-content: center;
     }
 
