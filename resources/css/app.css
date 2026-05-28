@@ -196,6 +196,14 @@ body{
 }
 /* --- ШАПКА И ЛОГОТИП --- */
 /* === HEADER === */
+header{
+    background: #feefd2;
+    margin: 10px 0;
+    text-align: center;
+    top: 0;
+    z-index: 999;
+    position: sticky;
+}
 .site-header {
     display: flex;
     align-items: center;
@@ -217,7 +225,7 @@ body{
 }
 
 .site-header__logo img {
-    max-height: 70px;
+    max-height: 110px;
     width: auto;
     object-fit: contain;
 }
@@ -225,7 +233,7 @@ body{
 /* Завитушки — растягиваются на всю ширину */
 .site-header__decor {
     flex: 1;
-    height: 70px;
+    height: 110px;
     background-repeat: no-repeat;
     background-size: 100% 100%;        /* растягиваем на всю ширину */
     background-position: center;
