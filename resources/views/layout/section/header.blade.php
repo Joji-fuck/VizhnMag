@@ -6,7 +6,7 @@
 
     <style>
         .site-header__decor{
-            background-image: '{{asset('images/zavitushki.png')}}';
+            background-image: url('{{asset('images/zavitushki.png')}}');
         }
     </style>
 </header>
