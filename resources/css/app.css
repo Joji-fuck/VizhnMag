@@ -195,28 +195,82 @@ body{
     /*background: #feefd2;*/
 }
 /* --- ШАПКА И ЛОГОТИП --- */
-header {
+/* === HEADER === */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
     background: #feefd2;
-    margin: 10px 0;
-    text-align: center;
+    position: sticky;
     top: 0;
     z-index: 999;
-    position: sticky;
+    margin: 10px 0;
 }
 
-header a img {
-    max-width: 400px;
-    width: 90%;
-    height: auto;
+/* Логотип ВИЖН */
+.site-header__logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.site-header__logo img {
+    max-height: 70px;
+    width: auto;
     object-fit: contain;
 }
-.running-bg {
+
+/* Завитушки */
+.site-header__decor {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.site-header__decor img {
+    max-height: 70px;
     width: 100%;
-    height: 80px;
-    background-repeat: repeat-x;
-    background-position: 0 0;
-    background-size: auto 80px;
-    animation: moveBg 10s linear infinite;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* === АДАПТАЦИЯ === */
+@media (max-width: 992px) {
+    .site-header {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .site-header__logo {
+        justify-content: center;
+    }
+
+    .site-header__logo img {
+        max-height: 60px;
+    }
+
+    .site-header__decor {
+        width: 100%;
+    }
+
+    .site-header__decor img {
+        max-height: 40px;
+        object-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header__logo img {
+        max-height: 45px;
+    }
+
+    .site-header__decor img {
+        max-height: 30px;
+    }
 }
 
 @keyframes moveBg {
