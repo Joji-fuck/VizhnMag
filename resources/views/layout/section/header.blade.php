@@ -3,4 +3,10 @@
         <img src="{{ asset('images/VIZhN_NADP.png') }}" alt="ВИЖН">
     </a>
     <div class="site-header__decor" aria-label="Журнал о Тюменском кино"></div>
+
+    <style>
+        .site-header__decor{
+            background-image: '{{asset('images/zavitushki.png')}}';
+        }
+    </style>
 </header>

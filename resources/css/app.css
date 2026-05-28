@@ -226,7 +226,6 @@ body{
 .site-header__decor {
     flex: 1;
     height: 70px;
-    background-image: url('/images/zavitushki.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;        /* растягиваем на всю ширину */
     background-position: center;
