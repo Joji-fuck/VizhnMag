@@ -222,19 +222,14 @@ body{
     object-fit: contain;
 }
 
-/* Завитушки */
+/* Завитушки — растягиваются на всю ширину */
 .site-header__decor {
     flex: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.site-header__decor img {
-    max-height: 70px;
-    width: 100%;
-    object-fit: contain;
-    object-position: left center;
+    height: 70px;
+    background-image: url('/images/zavitushki.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;        /* растягиваем на всю ширину */
+    background-position: center;
 }
 
 /* === АДАПТАЦИЯ === */
@@ -255,11 +250,7 @@ body{
 
     .site-header__decor {
         width: 100%;
-    }
-
-    .site-header__decor img {
-        max-height: 40px;
-        object-position: center;
+        height: 40px;
     }
 }
 
@@ -268,17 +259,8 @@ body{
         max-height: 45px;
     }
 
-    .site-header__decor img {
-        max-height: 30px;
-    }
-}
-
-@keyframes moveBg {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 500px 0;
+    .site-header__decor {
+        height: 30px;
     }
 }
 .navbar {
