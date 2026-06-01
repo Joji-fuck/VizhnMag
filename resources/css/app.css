@@ -543,26 +543,27 @@ header{
 
 /*КАРТОЧКИ КИНО*/
 .masonry-movie-grid {
-    column-count: 4;
-    column-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: start;
+    justify-items: stretch;   /* карточки тянутся на всю ширину ячейки */
+}
+
+.movie-card {
+    display: block;            /* НЕ inline-block — иначе центрируется */
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    color: #0f3f63;
+    text-decoration: none;
+    position: relative;
 }
 .masonry-movie-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.movie-card {
-    display: block;
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0);
-    color: #0f3f63;
-    text-decoration: none;
-    position: relative;
 }
 .card-movie-title{
     font-family: PPRightGothic, sans-serif;
@@ -605,13 +606,19 @@ header{
 
 /* АДАПТИВНОСТЬ */
 @media (max-width: 1400px) {
-    .masonry-movie-grid { column-count: 3; }
+    .masonry-movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
-@media (max-width: 900px) {
-    .masonry-movie-grid { column-count: 2; }
+@media (max-width: 1000px) {
+    .masonry-movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media (max-width: 600px) {
-    .masonry-movie-grid { column-count: 1; }
+    .masonry-movie-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 

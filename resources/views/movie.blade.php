@@ -6,5 +6,4 @@
             @include('layout.section.movieCard', ['post' => $movie])
         @endforeach
     </div>
-
 @endsection
