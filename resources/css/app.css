@@ -543,12 +543,10 @@ header{
 
 /*КАРТОЧКИ КИНО*/
 .masonry-movie-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    column-count: 4;
+    column-gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: start;
 }
 .masonry-movie-column {
     display: flex;
@@ -556,10 +554,12 @@ header{
     gap: 20px;
 }
 .movie-card {
-    break-inside: avoid;
     display: block;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
     margin-bottom: 20px;
-    background: rgba(255,255,255,0);
+    background: rgba(255, 255, 255, 0);
     color: #0f3f63;
     text-decoration: none;
     position: relative;
@@ -604,7 +604,10 @@ header{
 }
 
 /* АДАПТИВНОСТЬ */
-@media (max-width: 1100px) {
+@media (max-width: 1400px) {
+    .masonry-movie-grid { column-count: 3; }
+}
+@media (max-width: 900px) {
     .masonry-movie-grid { column-count: 2; }
 }
 @media (max-width: 600px) {

@@ -15,24 +15,7 @@ class MovieController extends Controller
     {
         $title = "Фильмы Вижн";
         $movies = Movie::latest()->take(15)->get();
-
-        $col1 = collect();
-        $col2 = collect();
-        $col3 = collect();
-        $col4 = collect();
-
-        foreach ($movies as $key => $movie) {
-            if ($key % 4 == 0) {
-                $col1->push($movie);
-            } elseif ($key % 4 == 1) {
-                $col2->push($movie);
-            } elseif ($key % 4 == 2) {
-                $col3->push($movie);
-            } else {
-                $col4->push($movie);
-            }
-        }
-        return view('movie', compact('title',  'movies', 'col1', 'col2', 'col3', 'col4'));
+        return view('movie', compact('title',  'movies'));
     }
 
     /**

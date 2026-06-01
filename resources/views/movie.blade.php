@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="masonry-movie-grid">
-        @foreach($posts as $post)
-            @include('layout.section.movieCard', ['post' => $post])
+        @foreach($movies as $movie)
+            @include('layout.section.movieCard', ['post' => $movie])
         @endforeach
     </div>
 
