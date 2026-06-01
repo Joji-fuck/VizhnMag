@@ -19,10 +19,7 @@
             <div class="movie-meta mt-5">
                 <h2>О фильме</h2>
                 <div class="movie-meta-section">
-                    <span>Возрастной рейтинг: </span> <span><i>18+</i></span>
-                </div>
-                <div class="movie-meta-section">
-                    <span>Страна: </span> <span><i>Россия</i></span>
+                    <span>Возрастной рейтинг: </span> <span><i>12+</i></span>
                 </div>
                 <div class="movie-meta-section">
                     <span>Жанр: </span> <span><i>{{$post->genre}}</i></span>
@@ -42,9 +39,6 @@
                 </div>
                 <div class="movie-meta-section">
                     <span>Страна: </span> <span><i>{{$post->country}}</i></span>
-                </div>
-                <div class="movie-meta-section">
-                    <span>Город: </span> <span><i>{{$post->city}}</i></span>
                 </div>
             </div>
         </div>

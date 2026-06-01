@@ -1,5 +1,5 @@
 <a href="{{route('movie.show', $post->id)}}" class="movie-card {{ !$post->image ? 'text-only' : '' }}">
-    <p class="card-movie-title">{{'"' . $post->title . '"'}}</p>
+    <p class="card-movie-title">{{$post->title}}</p>
     <div class="movie-card-bg">
         @if($post->image)
             <div class="card-movie-image">
