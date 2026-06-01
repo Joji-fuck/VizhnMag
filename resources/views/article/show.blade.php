@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="article-container">
-        <div>
+        <div style="max-width: 820px">
             {{-- Заголовок и мета-данные --}}
             <div class="article-header">
                 <h1>{{ $post->title }}</h1>

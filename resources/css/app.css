@@ -195,7 +195,8 @@ body{
     /*background: #feefd2;*/
 }
 /* --- ШАПКА И ЛОГОТИП --- */
-header {
+/* === HEADER === */
+header{
     background: #feefd2;
     margin: 10px 0;
     text-align: center;
@@ -203,28 +204,74 @@ header {
     z-index: 999;
     position: sticky;
 }
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    background: #feefd2;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin: 10px 0;
+}
 
-header a img {
-    max-width: 400px;
-    width: 90%;
-    height: auto;
+/* Логотип ВИЖН */
+.site-header__logo {
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 20%;
+
+}
+
+.site-header__logo img {
+    max-height: 80px;
+    width: auto;
     object-fit: contain;
 }
-.running-bg {
+
+/* Завитушки — растягиваются на всю ширину */
+.site-header__decor {
+    flex: 1;
     width: 100%;
-    height: 80px;
-    background-repeat: repeat-x;
-    background-position: 0 0;
-    background-size: auto 80px;
-    animation: moveBg 10s linear infinite;
+    height: auto;
+    object-fit: fill;
+    background-size: 100% 100%;
 }
 
-@keyframes moveBg {
-    from {
-        background-position: 0 0;
+/* === АДАПТАЦИЯ === */
+@media (max-width: 992px) {
+    .site-header {
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
     }
-    to {
-        background-position: 500px 0;
+
+    .site-header__logo {
+        max-width: 60%;
+        justify-content: center;
+    }
+
+    .site-header__logo img {
+        max-height: 60px;
+    }
+
+    .site-header__decor {
+        width: 100%;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header__logo img {
+        max-height: 45px;
+    }
+
+    .site-header__decor {
+        height: 30px;
     }
 }
 .navbar {
@@ -462,8 +509,8 @@ header a img {
 .card-meta {
     font-size: 16px;
     margin-bottom: 10px;
-    /*letter-spacing: 1px;*/
-
+    display: flex;
+    flex-direction: column;
 }
 .card-category{
     font-family: Denistina, sans-serif;
@@ -472,6 +519,7 @@ header a img {
     letter-spacing: revert;
     color: #ffc432;
     margin-right: 5px;
+    height: 40px;
 }
 
 .card-title {
@@ -496,33 +544,33 @@ header a img {
 /*КАРТОЧКИ КИНО*/
 .masonry-movie-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
     align-items: start;
+    justify-items: stretch;   /* карточки тянутся на всю ширину ячейки */
+}
+
+.movie-card {
+    display: block;            /* НЕ inline-block — иначе центрируется */
+    width: 100%;
+    background: rgba(255, 255, 255, 0);
+    color: #0f3f63;
+    text-decoration: none;
+    position: relative;
 }
 .masonry-movie-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.movie-card{
-    background: rgba(255, 255, 255, 0);
-    color: #0f3f63;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-}
-
 .card-movie-title{
     font-family: PPRightGothic, sans-serif;
     font-size: 24px;
     font-weight: 500;
     text-align: center;
 }
-
 .card-movie-director{
     font-family: Denistina, sans-serif;
     text-align: center;
@@ -545,7 +593,6 @@ header a img {
     position: relative;
     transition: transform .3s ease;
 }
-
 .card-movie-image img{
     display: block;
     width: 100%;
@@ -558,15 +605,19 @@ header a img {
 }
 
 /* АДАПТИВНОСТЬ */
-@media (max-width: 900px) {
-    .masonry-grid {
-        grid-template-columns: 1fr 1fr; /* 2 колонки на планшете */
+@media (max-width: 1400px) {
+    .masonry-movie-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-
-@media (max-width: 600px) {
-    .masonry-grid {
-        grid-template-columns: 1fr; /* 1 колонка на телефоне */
+@media (max-width: 1000px) {
+    .masonry-movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .masonry-movie-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -655,6 +706,12 @@ h1 {
     text-decoration: none;
     color: #000;
     font-weight: bold;
+}
+.related-item span{
+    font-family: PPRightGothic, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #0f3f63;
 }
 
 /* Адаптив для похожих новостей */
