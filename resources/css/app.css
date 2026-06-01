@@ -519,6 +519,7 @@ header{
     letter-spacing: revert;
     color: #ffc432;
     margin-right: 5px;
+    height: 40px;
 }
 
 .card-title {
@@ -554,21 +555,21 @@ header{
     flex-direction: column;
     gap: 20px;
 }
-.movie-card{
-    background: rgba(255, 255, 255, 0);
+.movie-card {
+    break-inside: avoid;
+    display: block;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0);
     color: #0f3f63;
     text-decoration: none;
-    display: inline-block;
     position: relative;
 }
-
 .card-movie-title{
     font-family: PPRightGothic, sans-serif;
     font-size: 24px;
     font-weight: 500;
     text-align: center;
 }
-
 .card-movie-director{
     font-family: Denistina, sans-serif;
     text-align: center;
@@ -591,7 +592,6 @@ header{
     position: relative;
     transition: transform .3s ease;
 }
-
 .card-movie-image img{
     display: block;
     width: 100%;
@@ -604,16 +604,11 @@ header{
 }
 
 /* АДАПТИВНОСТЬ */
-@media (max-width: 900px) {
-    .masonry-grid {
-        grid-template-columns: 1fr 1fr; /* 2 колонки на планшете */
-    }
+@media (max-width: 1100px) {
+    .masonry-movie-grid { column-count: 2; }
 }
-
 @media (max-width: 600px) {
-    .masonry-grid {
-        grid-template-columns: 1fr; /* 1 колонка на телефоне */
-    }
+    .masonry-movie-grid { column-count: 1; }
 }
 
 
