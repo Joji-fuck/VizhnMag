@@ -200,10 +200,11 @@ header{
     background: #feefd2;
     margin: 10px 0;
     text-align: center;
-    top: 0;
     z-index: 999;
     position: sticky;
+    top: 0;
 }
+
 .site-header {
     display: flex;
     align-items: center;
@@ -211,20 +212,17 @@ header{
     gap: 20px;
     padding: 10px 20px;
     background: #feefd2;
-    position: sticky;
-    top: 0;
     z-index: 999;
     margin: 10px 0;
 }
 
 /* Логотип ВИЖН */
 .site-header__logo {
-    flex-shrink: 1;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     height: 100%;
-    max-width: 20%;
-
+    min-width: 200px;
 }
 
 .site-header__logo img {
@@ -236,10 +234,12 @@ header{
 /* Завитушки — растягиваются на всю ширину */
 .site-header__decor {
     flex: 1;
-    width: 100%;
     height: auto;
     object-fit: fill;
     background-size: 100% 100%;
+    min-width: 0;
+    position: sticky;
+    top: 0;
 }
 
 /* === АДАПТАЦИЯ === */
@@ -279,7 +279,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0 20px;
     position: relative; /* Важно для выпадающего меню на мобилках */
     background: #ffc432;
     border-bottom: 10px solid #104064;
@@ -449,11 +449,30 @@ header{
     align-items: start;
 }
 
-/* Сами колонки */
 .masonry-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+@media (max-width: 1024px) {
+    .masonry-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .masonry-column:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Мобилка — всё в один столбец по порядку */
+@media (max-width: 600px) {
+    .masonry-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 15px;
+    }
+    .masonry-column {
+        display: contents;   /* контейнер исчезает, карточки становятся детьми grid */
+    }
 }
 
 /* Стили карточки */
