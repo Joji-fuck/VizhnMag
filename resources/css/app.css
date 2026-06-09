@@ -747,6 +747,7 @@ h1 {
     display: flex;
     gap: 20px;
     flex-direction: column;
+    width: 380px;
 }
 .movie-img img{
     border: 9px solid #0f3f63;
