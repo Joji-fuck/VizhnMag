@@ -737,47 +737,118 @@ h1 {
     }
 }
 
-.movie-header{
+.movie-header {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 10px;
 }
-.movie-img{
+
+.movie-img {
     display: flex;
     gap: 20px;
     flex-direction: column;
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
 }
-.movie-img img{
+
+.movie-img img {
+    width: 100%;
+    height: auto;
+    display: block;
     border: 9px solid #0f3f63;
+    box-sizing: border-box;
 }
-.btn-watch{
+
+.btn-watch {
     background: #0f3f63;
     color: white;
     padding: 10px;
+    display: inline-block;
+    text-align: center;
 }
-.btn-watch:hover, .btn-watch:active{
+
+.btn-watch:hover,
+.btn-watch:active {
     background: #0d3350;
     color: white;
 }
-.movie-meta{
+
+.movie-meta {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
-.movie-description{
-    font-size: 18px;
+
+.movie-description {
+    font-size: 23px;
+    line-height: 1.5;
 }
-.movie-meta-section span{
+
+.movie-meta-section span {
     font-size: 20px;
+    line-height: 1.4;
 }
-.movie-rewind{
+
+.movie-rewind {
+    width: 100%;
     max-width: 370px;
     border-radius: 15px;
 }
-.movie-button{
+
+.movie-button {
     border-radius: 5px;
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+    .movie-img {
+        max-width: 100%;
+    }
+
+    .movie-description {
+        font-size: 20px;
+    }
+
+    .movie-meta-section span {
+        font-size: 18px;
+    }
+
+    .movie-rewind {
+        max-width: 100%;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 480px) {
+    .movie-header {
+        gap: 8px;
+    }
+
+    .movie-img {
+        gap: 15px;
+    }
+
+    .movie-img img {
+        border-width: 6px;
+    }
+
+    .movie-description {
+        font-size: 17px;
+    }
+
+    .movie-meta-section span {
+        font-size: 15px;
+    }
+
+    .btn-watch {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .movie-button {
+        width: 100%;
+    }
 }
 /* ОБЩИЙ КОНТЕЙНЕР */
 .team-wrapper {

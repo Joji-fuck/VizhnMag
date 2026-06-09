@@ -1,7 +1,7 @@
 @extends('layout.include')
 
 @section('content')
-    <div class="container d-flex gap-5">
+    <div class="container d-flex gap-4">
         {{-- Главное изображение --}}
         <div class="movie-img">
             @if($post->image)
