@@ -9,6 +9,8 @@
                 <div class="article-date">
                     <span class="article-category">{{ $post->category->title ?? 'Новости' }} /</span>
                     {{ $post->created_at->locale('ru')->translatedFormat('d M') }}
+                    <br>
+                    <span>Автор статьи: Брызгалова П.Д.</span>
                 </div>
             </div>
 

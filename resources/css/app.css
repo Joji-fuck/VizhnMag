@@ -611,6 +611,7 @@ header{
     border-bottom: 15px solid #0f3f63;
     position: relative;
     transition: transform .3s ease;
+
 }
 .card-movie-image img{
     display: block;
@@ -766,8 +767,10 @@ h1 {
     display: flex;
     gap: 20px;
     flex-direction: column;
+    width: 300px;
 }
 .movie-img img{
+    width: 300px;
     border: 9px solid #0f3f63;
 }
 .btn-watch{
