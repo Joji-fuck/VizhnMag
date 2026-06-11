@@ -191,7 +191,7 @@
 }
 body{
     /*font-family: "Montserrat", sans-serif;*/
-    background: #fff2de;
+    background: #f89400;
     /*background: #feefd2;*/
 }
 /* --- ШАПКА И ЛОГОТИП --- */
@@ -737,119 +737,440 @@ h1 {
     }
 }
 
-.movie-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+/*==============Внутряк фильма===============*/
+.movie-page {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.movie-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) minmax(300px, 370px);
+    gap: 32px;
+    align-items: start;
 }
 
 .movie-img {
     display: flex;
-    gap: 20px;
     flex-direction: column;
-    width: 100%;
-    max-width: 380px;
+    gap: 20px;
 }
 
-.movie-img img {
+.movie-image {
     width: 100%;
-    height: auto;
-    display: block;
+    max-width: 320px;
+    aspect-ratio: 2 / 3;
     border: 9px solid #0f3f63;
-    box-sizing: border-box;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #dbe6ee;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
 .btn-watch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px;
     background: #0f3f63;
     color: white;
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-watch:hover,
 .btn-watch:active {
     background: #0d3350;
     color: white;
+    transform: translateY(-1px);
+}
+
+.movie-info {
+    min-width: 0;
+}
+
+.movie-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.movie-title {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.2;
+}
+
+.movie-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0;
 }
 
 .movie-meta {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 18px;
 }
 
-.movie-description {
-    font-size: 23px;
-    line-height: 1.5;
+.movie-meta h2 {
+    margin: 0;
+}
+
+.movie-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.movie-meta-section {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
 }
 
 .movie-meta-section span {
-    font-size: 20px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.movie-meta-section span:first-child {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.movie-meta-section span:last-child {
+    color: #4b5563;
 }
 
 .movie-rewind {
     width: 100%;
     max-width: 370px;
     border-radius: 15px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 35px rgba(15, 63, 99, 0.08);
+    padding: 24px;
+}
+
+.movie-rating-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.movie-rating-value {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.movie-rating-icon {
+    color: #facc15;
+}
+
+.movie-rating-from {
+    color: #9ca3af;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.movie-rating-count {
+    background: #f3f4f6;
+    color: #4b5563;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.movie-alert {
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.movie-alert-success {
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #166534;
+}
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.movie-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.movie-label-muted {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.movie-input,
+.movie-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-size: 15px;
+    background: #fff;
+}
+
+.movie-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.movie-input:focus,
+.movie-textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.is-error {
+    border-color: #ef4444;
+}
+
+.movie-error {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.movie-stars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 30px;
+    line-height: 1;
+    user-select: none;
+}
+
+.movie-star {
+    cursor: pointer;
+    color: #d1d5db;
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.movie-star:hover {
+    transform: scale(1.08);
+}
+
+.movie-star.is-active {
+    color: #facc15;
+}
+
+.movie-score-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
+}
+
+.movie-score-text span {
+    font-weight: 600;
+    color: #1f2937;
 }
 
 .movie-button {
-    border-radius: 5px;
+    border: none;
+    width: 100%;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Планшеты */
-@media (max-width: 768px) {
-    .movie-img {
-        max-width: 100%;
-    }
+.movie-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
 
-    .movie-description {
-        font-size: 20px;
-    }
+.movie-button:active {
+    transform: translateY(0);
+}
 
-    .movie-meta-section span {
-        font-size: 18px;
+.movie-reviews {
+    border-top: 1px solid #eceff3;
+    padding-top: 20px;
+}
+
+.movie-reviews-title {
+    margin: 0 0 14px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.movie-reviews-title span {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.movie-review-item {
+    padding: 14px 0;
+    border-top: 1px solid #eceff3;
+}
+
+.movie-review-item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.movie-review-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.movie-review-name {
+    color: #1f2937;
+}
+
+.movie-review-score {
+    background: #facc15;
+    color: #111827;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.movie-review-text {
+    margin: 0 0 6px;
+    color: #374151;
+    line-height: 1.6;
+    word-break: break-word;
+}
+.movie-review-time {
+    color: #9ca3af;
+    font-size: 12px;
+}
+.movie-empty {
+    color: #6b7280;
+    text-align: center;
+    padding: 12px 0 4px;
+    margin: 0;
+}
+
+/* Планшет */
+@media (max-width: 1199px) {
+    .movie-layout {
+        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
     }
 
     .movie-rewind {
+        grid-column: 1 / -1;
         max-width: 100%;
     }
 }
-
-/* Телефоны */
-@media (max-width: 480px) {
-    .movie-header {
-        gap: 8px;
+/* Мобильные */
+@media (max-width: 767px) {
+    .movie-page {
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
-
+    .movie-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
     .movie-img {
-        gap: 15px;
+        align-items: center;
     }
-
-    .movie-img img {
-        border-width: 6px;
-    }
-
-    .movie-description {
-        font-size: 17px;
-    }
-
-    .movie-meta-section span {
-        font-size: 15px;
-    }
-
+    .movie-image,
     .btn-watch {
-        width: 100%;
-        padding: 12px;
+        max-width: 100%;
+    }
+    .movie-header {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+    .movie-description {
+        font-size: 16px;
+    }
+    .movie-meta-section {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    .movie-meta-section span {
+        font-size: 16px;
+    }
+    .movie-rewind {
+        padding: 18px;
     }
 
-    .movie-button {
-        width: 100%;
+    .movie-rating-value {
+        font-size: 28px;
+    }
+
+    .movie-reviews-title {
+        font-size: 20px;
     }
 }
+@media (max-width: 480px) {
+    .movie-title {
+        font-size: 26px;
+    }
+
+    .movie-image {
+        border-width: 6px;
+        border-radius: 14px;
+    }
+
+    .movie-stars {
+        font-size: 26px;
+    }
+
+    .movie-review-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .movie-button,
+    .btn-watch {
+        min-height: 44px;
+    }
+}
+/*==============конец Внутряк фильма===============*/
+
 /* ОБЩИЙ КОНТЕЙНЕР */
 .team-wrapper {
     display: flex;
