@@ -1,17 +1,28 @@
 @extends('layout.include')
 
 @section('content')
-    <div class="article-container">
-        <div style="max-width: 820px">
-            {{-- Заголовок и мета-данные --}}
-            <div class="article-header">
-                <h1>{{ $post->title }}</h1>
-                <div class="article-date">
-                    <span class="article-category">{{ $post->category->title ?? 'Новости' }} /</span>
-                    {{ $post->created_at->locale('ru')->translatedFormat('d M') }}
-                    <br>
-                    <span>Автор статьи: Брызгалова П.Д.</span>
-                </div>
+    {{-- Общий контейнер фильма --}}
+    <div class="movie-container">
+
+        {{-- ЛЕВАЯ КОЛОНКА: Постер и кнопка --}}
+        <div class="movie-img">
+            @if($movie->poster)
+                <img src="{{ asset('storage/' . $movie->poster) }}" alt="{{ $movie->title }}">
+            @else
+                <img src="{{ asset('images/no-image.jpg') }}" alt="Нет постера">
+            @endif
+
+            {{-- Кнопка просмотра --}}
+            <a href="{{ route('movie.watch', $movie->id) }}" class="btn-watch movie-button">
+                Смотреть онлайн
+            </a>
+        </div>
+
+        {{-- ПРАВАЯ КОЛОНКА: Описание и мета-данные --}}
+        <div class="movie-meta">
+
+            <div class="movie-header">
+                <h1>{{ $movie->title }}</h1>
             </div>
 
             {{-- Главное изображение --}}
