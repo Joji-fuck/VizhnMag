@@ -3,8 +3,6 @@
 @section('content')
     <div class="container movie-page">
         <div class="movie-layout">
-
-            {{-- Левая колонка: постер + кнопка --}}
             <div class="movie-img">
                 @if($post->image)
                     <div class="movie-image">
@@ -14,8 +12,6 @@
 
                 <a href="{{ $post->link }}" class="btn-watch">Смотреть!</a>
             </div>
-
-            {{-- Центральная колонка: информация о фильме --}}
             <div class="movie-info">
                 <div class="movie-header">
                     <h1 class="movie-title">{{ $post->title . " (" . $post->year . ')' }}</h1>
