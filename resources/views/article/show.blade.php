@@ -10,7 +10,7 @@
                     <span class="article-category">{{ $post->category->title ?? 'Новости' }} /</span>
                     {{ $post->created_at->locale('ru')->translatedFormat('d M') }}
                     <br>
-                    <span>Автор статьи: Брызгалова П.Д.</span>
+                    <span>Автор статьи: Полина Брызгалова</span>
                 </div>
             </div>
 
