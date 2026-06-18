@@ -24,7 +24,7 @@
                     <div class="movie-meta-list">
                         <div class="movie-meta-section">
                             <span>Возрастной рейтинг:</span>
-                            <span><i>12+</i></span>
+                            <span><i>{{ $post->age_rating}}</i></span>
                         </div>
 
                         <div class="movie-meta-section">

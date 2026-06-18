@@ -29,6 +29,10 @@
                 <input type="text" name="title" id="title" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('title') }}" placeholder="Введите заголовок...">
             </div>
             <div class="mb-4">
+                <label for="age_genre" class="block text-gray-700 font-bold mb-2">Возрастное ограничение</label>
+                <input type="text" name="age_genre" id="age_genre" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('age_genre') }}" placeholder="12+">
+            </div>
+            <div class="mb-4">
                 <label for="year" class="block text-gray-700 font-bold mb-2">Год/года</label>
                 <input type="text" name="year" id="year" class="w-full border rounded px-3 py-2 outline-none focus:border-blue-500" value="{{ old('year') }}" placeholder="2024-2025">
             </div>

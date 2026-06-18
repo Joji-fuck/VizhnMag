@@ -45,6 +45,7 @@ class MovieController extends Controller
             'country' => 'required|string',
             'city' => 'required|string',
             'link' => 'required|url|max:500',
+            'age_genre' => 'required|string|max:100',
         ]);
 
         if ($request->hasFile('image')) {
@@ -88,6 +89,7 @@ class MovieController extends Controller
             'country' => 'required|string',
             'city' => 'required|string',
             'link' => 'required|url|max:500',
+            'age_genre' => 'required|string|max:100',
         ]);
         if ($request->hasFile('image')) {
             if ($movie->image) {

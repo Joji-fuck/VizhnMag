@@ -19,6 +19,7 @@
                     <th scope="col">Превью</th>
                     <th scope="col">Название</th>
                     <th scope="col">Год выпуска</th>
+                    <th scope="col">Возраст</th>
                     <th scope="col">Описание</th>
                     <th scope="col">Жанр</th>
                     <th scope="col">Режиссер</th>
@@ -37,6 +38,7 @@
                                         <td><img src="{{asset('storage/' . $movie->image)}}" style="width: 120px"/></td>
                                         <td>{{$movie->title}}</td>
                                         <td>{{$movie->year}}</td>
+                                        <td>{{$movie->age_rating}}</td>
                                         <td>{{$movie->description}}</td>
                                         <td>{{$movie->genre}}</td>
                                         <td>{{$movie->director}}</td>
