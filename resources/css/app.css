@@ -440,19 +440,37 @@ header{
 /* Общий контейнер */
 .masonry-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     align-items: start;
 }
-
-/* Сами колонки */
 .masonry-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+/* Адаптация */
+@media (max-width: 1100px) {
+    .masonry-grid {
+        font-size: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .masonry-column:nth-child(3) {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    .masonry-grid {
+        grid-template-columns: 1fr;
+    }
+    .masonry-column:nth-child(2),
+    .masonry-column:nth-child(3) {
+        display: none;
+    }
 }
 
 /* Стили карточки */
@@ -548,32 +566,22 @@ header{
     max-width: 1200px;
     margin: 0 auto;
     align-items: start;
+    justify-items: stretch;   /* карточки тянутся на всю ширину ячейки */
 }
 
 .movie-card {
-    display: block;
+    display: block;            /* НЕ inline-block — иначе центрируется */
     width: 100%;
     background: rgba(255, 255, 255, 0);
     color: #003157;
     text-decoration: none;
     position: relative;
 }
-@media (max-width: 1100px) {
-    .masonry-movie-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .card-title {
-        font-size: 18px;
-    }
+.masonry-movie-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-
-@media (max-width: 600px) {
-    .masonry-movie-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 .card-movie-title{
     font-family: PPRightGothic, sans-serif;
     font-size: 24px;
