@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('movies', function (Blueprint $table) {
-            $table->string('age_rating')->nullable()->after('genre')->default('12+');
-        });
+//        Schema::table('movies', function (Blueprint $table) {
+//            $table->string('age_rating')->nullable()->after('genre')->default('12+');
+//        });
     }
 
     /**
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('movies', function (Blueprint $table) {
-            $table->dropColumn('age_rating');
-        });
+//        Schema::table('movies', function (Blueprint $table) {
+//            $table->dropColumn('age_rating');
+//        });
     }
 };
