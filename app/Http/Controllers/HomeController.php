@@ -13,23 +13,7 @@ class HomeController extends Controller
         $title = "Вижн";
         $user = Auth::user();
         $articles = Article::latest()->take(15)->get();
-
-        $col1 = collect();
-        $col2 = collect();
-        $col3 = collect();
-
-        foreach ($articles as $key=>$article) {
-            if ($key % 3 == 0){
-                $col1->push($article);
-            }
-            elseif ($key % 3 == 1){
-                $col2->push($article);
-            }
-            else{
-                $col3->push($article);
-            }
-        }
-        return view('home', compact('title', 'user', 'articles', 'col1', 'col2', 'col3'));
+        return view('home', compact('title', 'user', 'articles'));
     }
     public function show(Article $article){
         $title = "Вижн";

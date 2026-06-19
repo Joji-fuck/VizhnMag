@@ -437,44 +437,31 @@ header{
 
 
 
-/* Общий контейнер */
 .masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    align-items: start;
 }
-.masonry-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.movie-card {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
 }
-
-/* Адаптация */
 @media (max-width: 1100px) {
     .masonry-grid {
-        font-size: 20px;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .masonry-column:nth-child(3) {
-        display: none;
+        column-count: 2;
     }
 }
 @media (max-width: 600px) {
     .masonry-grid {
-        grid-template-columns: 1fr;
-    }
-    .masonry-column:nth-child(2),
-    .masonry-column:nth-child(3) {
-        display: none;
+        column-count: 1;
     }
 }
 
 /* Стили карточки */
-
 .news-card {
     background: rgba(255, 255, 255, 0);
     overflow: hidden;
