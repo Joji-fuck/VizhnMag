@@ -36,4 +36,10 @@ class AboutController extends Controller
         ];
         return view('about', compact('title', 'team'));
     }
+
+    public function about()
+    {
+        $title = "Наша задача";
+        return view('mission', compact('title'));
+    }
 }

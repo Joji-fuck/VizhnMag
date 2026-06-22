@@ -283,7 +283,25 @@ header{
     background: #eabc2d;
     border-bottom: 10px solid #003157;
 }
-
+.navbar-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VelaSans', sans-serif;
+    padding: 5px 0;
+    background: #003157;
+    color: #eabc2d;
+}
+.about-h1{
+    font-family: 'Denistina', sans-serif;
+    color: #eabc2d;
+    font-size: 32px
+}
+.about-text{
+    font-family: 'VelaSans', sans-serif;
+    color: #003157;
+    font-size: 28px;
+}
 /* Прячем бургер на ПК */
 .burger-menu {
     display: none;
@@ -460,13 +478,20 @@ header{
     break-inside: avoid;
 }
 
-
 /* Стили карточки */
 .news-card {
     background: rgba(255, 255, 255, 0);
     overflow: hidden;
     color: #003157;
     text-decoration: none;
+}
+@media (max-width: 1200px) {
+    .card-category{
+        font-size: 28px;
+    }
+    .card-title{
+        font-size: 20px;
+    }
 }
 
 /* Настройки обертки фото */
