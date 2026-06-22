@@ -11,7 +11,7 @@ class AboutController extends Controller
         $team = [
           [
               'id' => 1,
-              'role' => 'Главный редактор/Крёстная мать',
+              'role' => 'Главный редактор',
               'name' => 'Полина Брызгалова',
               'image' => 'team/Полина.jpg',
               'social' => 'mevampow',
@@ -19,7 +19,7 @@ class AboutController extends Controller
           ],
           [
               'id' => 2,
-              'role' => 'Веб-разработчик/Энергетик вместо крови',
+              'role' => 'Веб-разработчик',
               'name' => 'Максим Логвинов',
               'image' => 'team/Максим.jpg',
               'social' => 'WhatAboutAula',
@@ -27,7 +27,7 @@ class AboutController extends Controller
           ],
           [
               'id' => 3,
-              'role' => 'Дизайнер/Намалевала наше видение',
+              'role' => 'Дизайнер',
               'name' => 'Дарья Сендык',
               'image' => 'team/Дарья.jpg',
               'social' => 'White_and_peachy',
