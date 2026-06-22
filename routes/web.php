@@ -14,7 +14,7 @@ route::post('/register', [\App\Http\Controllers\AuthController::class, 'register
 route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about');
-Route::get('/mission', [\App\Http\Controllers\AboutController::class, 'mission'])->name('mission');
+Route::get('/mission', [\App\Http\Controllers\AboutController::class, 'about'])->name('mission');
 
 Route::get('/movie', [\App\Http\Controllers\MovieController::class, 'index'])->name('movie.index');
 Route::get('/movie/{movie}', [\App\Http\Controllers\MovieController::class, 'show'])->name('movie.show');

@@ -7,8 +7,8 @@
             <div class="article-header">
                 <h1 class="related-news-title">{{ $post->title }}</h1>
                 <div class="article-date">
-                    <span class="article-category">{{ $post->category->title ?? 'Новости' }} /</span>
-                    {{ $post->created_at->locale('ru')->translatedFormat('d M') }}
+                    <span class="article-category">{{ $post->category->title ?? 'Новости' }}</span>
+                    {{"/" . $post->created_at->locale('ru')->translatedFormat('d M') }}
                     <br>
                     <span>Автор: Полина Брызгалова</span>
                 </div>

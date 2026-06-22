@@ -672,8 +672,8 @@ header{
 .article-category {
     font-family: Denistina, 'sans-serif';
     color: #eabc2d;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: 32px;
+    font-weight: 500;
 }
 .article-body p img{
     width: 100%;
