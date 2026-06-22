@@ -291,6 +291,17 @@ header{
     padding: 5px 0;
     background: #003157;
     color: #eabc2d;
+    gap: 40px;
+}
+.navbar-about a{
+    text-decoration: none;
+    color: #eabc2d;
+    font-size: 25px;
+}
+@media (max-width: 768px) {
+    .navbar-about a{
+        font-size: 21px;
+    }
 }
 .about-h1{
     font-family: 'Denistina', sans-serif;

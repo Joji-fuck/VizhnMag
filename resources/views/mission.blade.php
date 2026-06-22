@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="navbar-about">
-        <a href="/about">О нас</a>
-        <a href="/mission">Наша миссия</a>
+        <a href="/about" style="font-weight: 400;">О нас</a>
+        <a href="/mission" style="font-weight: 600;">Наша миссия</a>
     </div>
     <h1 class="about-h1">Камера! Мотор! Привет!</h1>
 

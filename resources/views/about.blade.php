@@ -1,9 +1,9 @@
 @extends('layout.include')
 
 @section('content')
-    <div class="navbar">
-        <a href="/about">О нас</a>
-        <a href="/mission">Наша миссия</a>
+    <div class="navbar-about">
+        <a href="/about" style="font-weight: 600;">О нас</a>
+        <a href="/mission" style="font-weight: 400;">Наша миссия</a>
     </div>
     <div class="team-wrapper">
         <div class="team-list">
